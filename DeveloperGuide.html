@@ -33,7 +33,11 @@
 <li><a href="#dev-ops">6. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-run-task-with-pomodoro">C.1. Use case: Run task with Pomodoro</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
@@ -628,7 +632,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>has a need to manage a significant number of tasks</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -642,10 +646,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <li>
 <p>is reasonably comfortable using CLI apps</p>
 </li>
+<li>
+<p>need motivation to get things done</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: We integrate a Pomodoro-Pet environment into a full fledged task manager. The pet system serves to gamify the act of doing tasks, thereby motivating users, and the Pomodoro helps users get into a regular work/rest cycle. This integrationcovers all aspects of productivity in line platform. It covers motivation, organising of tasks and also how to go about doing them. This all in one solution is seldom found in other applications which implement maybe 1 or 2 of these features.</p>
 </div>
 </div>
 </div>
@@ -680,63 +687,156 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all current ongoing tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my tasks and time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all tasks I have completed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">monitor my progress</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">able to edit my task description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make changes in the event something unexpected happens</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a task by specifying a task description only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">record tasks that needs to be done.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a task by specifying a task description and a reminder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">record tasks that needs to be done by a specific period</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be rewarded for completing my tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feel satisfied and motivated to perform</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort upcoming taks by date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter out the latest/oldest tasks according to my needs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove tasks that I no longer care to track</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">utlise the pomodoro technique to break down my work into intervals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boost productivity and keep track of time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reminder system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be on track to complete my tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lazy user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gamification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be incentivised to work on my tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pro user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navigate commands using shortcuts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save more time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pro user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete several tasks at once</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save more time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pro user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mark several tasks done at once</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save more time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be greeted by a cute mascot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feel happy and motivated to do work</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort my tasks by difficulty/priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage my tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the time spent on each task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check my progress</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see my pet grow and gain accessories because of my productivity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am more motivated to stay productive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pro user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customise the rate at which I should do work</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fit my workstyle better</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pro user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">automate when my done tasks are cleared</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customise when I want my tasks to be removed</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customise my pet with different seasons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I am more entertained</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is <code>BBProductive</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User requests to list tasks</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>BBProductive shows a list of tasks</p>
 </li>
 <li>
 <p>User requests to delete a specific person in the list</p>
 </li>
 <li>
-<p>AddressBook deletes the person</p>
+<p>BBProductive deletes the task</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -759,7 +859,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
+<p>3a1. BBProductive shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -769,8 +869,77 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="use-case-run-task-with-pomodoro"><a class="link" href="#use-case-run-task-with-pomodoro">C.1. Use case: Run task with Pomodoro</a></h3>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to run task with Pomodoro</p>
+</li>
+<li>
+<p>User proceeds to do task</p>
+</li>
+<li>
+<p>When Pomodoro timer ends, BBProductive prompts the user to continue for the next interval, or exit the Pomodoro with the task done/undone</p>
+</li>
+<li>
+<p>User completes the task and request to mark the task as done</p>
+</li>
+<li>
+<p>BBProductive marks the task as done</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given index is invalid.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. BBProductive shows an error message.
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. User has not completed the task.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. User continues the Pomodoro for the next interval.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. User has not completed the task but wants to take a break from completing the task.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. User exits the Pomodoro without marking the task as done.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -787,6 +956,15 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>Graphics should not be offensive to any culture in any way</p>
+</li>
+<li>
+<p>Product should function with CLI alone</p>
+</li>
+<li>
+<p>Product should be usable by people with no initial knowledge of Pomodoro</p>
 </li>
 </ol>
 </div>
@@ -807,6 +985,18 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
 <dd>
 <p>A contact detail that is not meant to be shared with others</p>
+</dd>
+<dt class="hdlist1">[[pomodoro] Pomodoro</dt>
+<dd>
+<p>A time management method developed by Francesco Cirillo. Traditionally, cycles of 25 minutes of work and 5 minutes of rest.</p>
+</dd>
+<dt class="hdlist1"><a id="task"></a> Task</dt>
+<dd>
+<p>A snippet of text specified by the user that can be tracked (done/time spent).</p>
+</dd>
+<dt class="hdlist1"><a id="pet"></a> Pet</dt>
+<dd>
+<p>A cute little companion whom the player can care for and accessorise with more tasks being done.</p>
 </dd>
 </dl>
 </div>
@@ -958,4 +1148,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:47:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:52:48 UTC</div></div></div></body></html>

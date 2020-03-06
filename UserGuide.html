@@ -15,7 +15,7 @@
 <ul class="sectlevel2">
 <li><a href="#reminders">3.1. Reminders</a></li>
 <li><a href="#viewing-help-code-help-code">3.2. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">3.3. Adding a person: <code>add</code></a></li>
+<li><a href="#adding-a-task-code-add-code">3.3. Adding a task: <code>add</code></a></li>
 <li><a href="#listing-all-tasks-code-list-code">3.4. Listing all tasks : <code>list</code></a></li>
 <li><a href="#editing-a-task-code-edit-code">3.5. Editing a task : <code>edit</code></a></li>
 <li><a href="#using-pomodoro-code-pom-code">3.6. Using Pomodoro: <code>pom</code></a></li>
@@ -23,7 +23,9 @@
 <li><a href="#deleting-a-task-code-delete-code">3.8. Deleting a task : <code>delete</code></a></li>
 <li><a href="#clearing-all-entries-code-clear-code">3.9. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.10. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.11. Saving the data</a></li>
+<li><a href="#statistics-stats">3.11. Statistics : 'stats'</a></li>
+<li><a href="#pet">3.12. Pet</a></li>
+<li><a href="#saving-the-data">3.13. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -106,26 +108,6 @@ When the time has arrived, a pop up will appear reminding the user to complete t
 <div class="paragraph">
 <p>Format: <code>reminder &lt;index&gt; /at yyyy-mm-ddThh-mm-ss</code></p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Pet</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The Pet gives a sense of responsibility to the user.</p>
-</li>
-<li>
-<p>The Pet acts as a motivation to encourage the user to be productive.</p>
-</li>
-<li>
-<p>The Pet gives a sense of satisfaction to the user when it is being fed.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.2. Viewing help : <code>help</code></a></h3>
@@ -134,22 +116,10 @@ When the time has arrived, a pop up will appear reminding the user to complete t
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">3.3. Adding a person: <code>add</code></a></h3>
+<h3 id="adding-a-task-code-add-code"><a class="link" href="#adding-a-task-code-add-code">3.3. Adding a task: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a task to the task list<br>
 Format: <code>add n/Do math homework d/pages 1-2 ld/LOCALDATE</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-TODO: Insert a tip here.
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -367,7 +337,24 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.11. Saving the data</a></h3>
+<h3 id="statistics-stats"><a class="link" href="#statistics-stats">3.11. Statistics : 'stats'</a></h3>
+<div class="paragraph">
+<p>Views statistics generated through the app usage.
+stats SPEED/DONE
+SPEED : Displays average time taken to complete tasks over past week/month/year.
+DONE : Displays average number of tasks done over past week/month/year.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="pet"><a class="link" href="#pet">3.12. Pet</a></h3>
+<div class="paragraph">
+<p>The Pet gives a sense of responsibility to the user.<br>
+It acts as a motivation to encourage the user to be productive.<br>
+The Pet also gives a sense of satisfaction to the user when it is being fed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.13. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -414,7 +401,13 @@ e.g. <code>find Quiz Essay</code></p>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
 </li>
+<li>
+<p><strong>Statistics</strong> : <code>stats SPEED/DONE</code></p>
+</li>
+<li>
+<p><strong>Pom</strong> : <code>pom 10</code></p>
+</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 15:52:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-06 07:42:15 UTC</div></div></div></body></html>
